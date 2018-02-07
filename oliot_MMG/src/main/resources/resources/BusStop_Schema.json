@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://wise-iot.eu/schemas/busStop.json#",
+  "PostalAddress":"xxx",
+  "type": "object",
+  "title": "Bus Stop schema.",
+  "description": "a bus stop which belongs to a bus line and in which buses can run",
+  "properties": {
+  "id":{
+	"type": "string",
+	"example": "urn:entity:busan:transport:bus:busId:<busStopId>"
+	},
+    "refBuses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+		"example": ["urn:entity:busan:transport:bus:bus:<busId>"],
+        "description": "Bus stop ID ."
+      }
+    },
+	"shortID": {
+      "type": "string",
+      "title": "Short ID schema.",
+	  "example": "5200104000",
+      "description": "The ID of the bus line"
+    },	
+    "busStopCount": {
+      "type": "array",
+      "description": "The counting number of the bus stop in the bus lines that pass by the bus stop (e.g. in a bus line the first bus stop will be numbered 1,the second one numbered 2, the third one numbered 3, and so on until the last bus stop)",
+      "items": {
+        "type": "number",
+		"example": "[1,2]",
+        "description": "The counting number of the bus stop in the bus lines that pass by the bus stop"
+      }
+    },
+	"name": {
+      "type": "string",
+	  "example": "PENACASTILLO – PLAZA DE ITALIA",
+      "description": "The name of the bus line"
+    },
+	"direction": {
+      "type": "string",
+      "description": "Indicates the direction of the driving by using the name of an area in that direction"
+    },
+	"location": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "title": "1 schema.",
+		"example": [36.372,127.363],
+        "description": "The GPS XY coordination of the bus stop."
+      }
+    },
+	"address": {
+      "type": "object",
+      "title": "The Address schema.",
+	  "example": {
+					"@type": "object",
+					"addressLocality": "Denver",
+					"addressRegion": "CO",
+					"postalCode": "80209",
+					"streetAddress": "7 S. Broadway"
+    },
+      "description": "The bus stop civic address. The values of this property follows the structure defined in https://schema.org/PostalAddress"
+    },
+	"dateModified": {
+      "type": "string",
+      "format": "date-time",
+	  "example": "2017-02-05T08:15:30-05:09",
+      "description": "The list of all bus lines that pass by the bus stop"
+    },	
+	"refBusLines": {
+	   "type": "array",
+      "description": "The list of all bus stops belonging to the bus line",
+      "items": {
+        "type": "string",
+		"example": "urn:entity:busan:transport:bus:busStop:<busLineId>",
+        "description": "The list of all bus lines that pass by the bus stop."
+      }
+    }
+  },
+  "required": ["id","dateModified" ]
+}
+
+
+
+
+
+

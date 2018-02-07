@@ -1,0 +1,22 @@
+{
+ 	"_epcis_ip" : "ip address for EPCIS",
+	"epcis_ip" : "143.248.55.159",
+	"_epcis_port" : "port number for EPCIS",
+	"epcis_port" : "8080",
+	"_epcis_ip_mqtt" : "ip address for EPCIS MQTT",
+	"epcis_ip_mqtt" : "143.248.55.159",
+	"_epcis_port_mqtt" : "port number for EPCIS MQTT",
+	"epcis_port_mqtt" : "1883",
+	
+	"_oneM2M_ip" : "ip address for oneM2M",
+	"oneM2M_ip" : "143.248.55.183",
+	"_oneM2M_port" : "port number for oneM2M",
+	"oneM2M_port" : "7579"
+	
+}
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+{   
+	"id": "urn:entity:busan:transport:bus:busId:<busId>",
+	"refBusStop":"urn:entity:busan:transport:bus:busStopId:<busStopId>",
+	"refBusLine":"urn:entity:busan:transport:bus:buslineId:<buslineId>",
+	"shortID":"101",
+	"remainingTimes":["P3Y6M4DT12H30M5S"],
+	"remainingDistances":[100],
+	"remainingStations":2,
+	"comapnyName":"SamHoa",
+	"location":[36.372,127.363],
+	"dateModified":"2017-02-05T08:15:30-05:09"
+	}

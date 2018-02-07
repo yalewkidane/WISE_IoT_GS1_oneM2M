@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://wise-iot.eu/schemas/busLine.json#",
+  "type": "object",
+  "title": "BusLine schema.",
+  "description": "a bus line in which there are bus stops (mandatory) and buses (optional).",
+  "properties": {
+	"id":{
+	"type": "string",
+	"example": "urn:entity:busan:transport:bus:busId:<busLineId>"
+	},
+	"refBusStops": {
+      "type": "array",
+      "title": "LocationCoordinates schema.",
+	  "example": ["urn:entity:busan:transport:bus:busStop:<busStopId>"],
+      "description": "The list of all bus stops belonging to the bus line",
+      "items": {
+        "type": "string",
+		"example": "urn:entity:busan:transport:bus:busStop:<busStopId>",
+        "description": "Bus stop IDs ."
+      }
+    },
+	"shortID": {
+      "type": "string",
+	  "example": "5200104000",
+      "description": "The ID of the bus line"
+    },
+	"localID": {
+      "type": "string",
+	  "example": "104",
+      "description": "The local ID (shorter form) of the bus line"
+    },
+	"name": {
+      "type": "string",
+	  "example": "PENACASTILLO – PLAZA DE ITALIA",
+      "description": "The name of the bus line"
+    },
+	"refStartBusStop": {
+      "type": "string",
+	  "example": "urn:entity:busan:transport:bus:busStop:<busStopId>",
+      "description": "The starting stop of the bus line"
+    },
+	"refEndBusStop": {
+      "type": "string",
+	  "example": "urn:entity:busan:transport:bus:busStop:<busStopId>",
+      "description": "The ending stop of the bus line"
+    },
+	"busLineType": {
+      "type": "string",
+	  "example": "standard",
+      "description": "The type of the buses that run on the bus line"
+    },
+	"startTime": {
+      "type": "string",
+      "format": "date-time",
+	  "example": "2017-02-05T08:15:30-05:09",
+      "description": "The starting time from which the bus line operates in ISO 8601 date and time format"
+    },
+	"endTime": {
+      "type": "string",
+      "format": "date-time",
+	  "example": "2017-02-05T08:15:30-05:09",
+      "description": "The ending time until which the bus line operates, in ISO 8601 date and time format"
+    },
+	"intervalNorm": {
+      "type": "string",
+      "pattern": "(\\b|-)P(?=\\d+[YMDW]|T\\d+[HMS]|T\\d+\\.\\d+S)(?:(\\d+)Y)?(?:(\\d+)M)?(?:(\\d+)([DW]))?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?\\b",
+	  "example": "P3Y6M4DT12H30M5S",
+      "description": "The interval of buses arrival at a bus stop along the bus line in normal days, in ISO 8601 duration format"
+    },
+	"intervalHoli": {
+      "type": "string",
+      "pattern": "(\\b|-)P(?=\\d+[YMDW]|T\\d+[HMS]|T\\d+\\.\\d+S)(?:(\\d+)Y)?(?:(\\d+)M)?(?:(\\d+)([DW]))?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?\\b",
+	  "example": "P3Y6MdDT12H30M5S",
+      "description": "The interval of buses arrival at a bus stop along the bus line in holidays, in ISO 8601 duration format"
+    },
+	"intervalPeak": {
+      "type": "string",
+      "pattern": "(\\b|-)P(?=\\d+[YMDW]|T\\d+[HMS]|T\\d+\\.\\d+S)(?:(\\d+)Y)?(?:(\\d+)M)?(?:(\\d+)([DW]))?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?\\b",
+	  "example": "P3Y6MdDT12H30M5S",
+      "description": "The interval of buses arrival at a bus stop along the bus line at rush hour, in ISO 8601 duration format (e.g. P3Y6M4DT12H30M5S)"
+    },
+	"dateModified": {
+      "type": "string",
+      "format": "date-time",
+	  "example": "2017-02-05T08:15:30-05:09",
+      "description": "The dateTime when the data has been last modified"
+    }
+  },
+  "required": ["id","dateModified"]
+}
+
+
+

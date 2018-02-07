@@ -1,0 +1,17 @@
+{   
+	"id": "urn:entity:busan:transport:bus:busId:<busStopId>",
+	"refBuses":["urn:entity:busan:transport:bus:bus:<busId>"],
+	"shortID":"11161",
+	"busStopCount":[1,2],
+	"name":"city hall",
+	"location":[36.372,127.363],
+	"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Denver",
+				"addressRegion": "CO",
+				"postalCode": "80209",
+				"streetAddress": "7 S. Broadway"
+				} ,
+	"refBusLines":["urn:entity:busan:transport:bus:busStop:<busLineId>"],
+	"dateModified":"2017-02-05T08:15:30-05:09"
+	}

@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://wise-iot.eu/schemas/busEstimation.json#",
+  "type": "object",
+  "title": "Bus Estimation schema.",
+  "description": "a bus which runs towards a bus stop on a bus line.",
+  "properties": {
+	"id":{
+	"type": "string",
+	"example": "urn:entity:busan:transport:bus:busId:<busId>"
+	},
+    "refBusStop": {
+      "type": "string",
+	  "example": "urn:entity:busan:transport:bus:busStopId:<busStopId>",
+      "description": "Reference to the correspondent busStop entity."
+    },
+    "refBusLine": {
+      "type": "string",
+      "description": "Reference to the correspondent busLine entity."
+    },
+    "shortID": {
+      "type": "string",
+	  "example": "102",
+      "description": "The ID of the bus "
+    },
+    "remainTimes": {
+	  "type": "array",
+      "title": "LocationCoordinates schema.",
+	  "example": "",
+      "description": "Each value of the array describes the remaining time of each bus of the line to the busStop. It will have as many positions as buses from the line passing by the busStop. The position in the array indicates the order of arrival (eg. [bus1Time, bus2Time, bus3Time])",
+      "items": {
+        "type": "string",
+		"pattern": "(\\b|-)P(?=\\d+[YMDW]|T\\d+[HMS]|T\\d+\\.\\d+S)(?:(\\d+)Y)?(?:(\\d+)M)?(?:(\\d+)([DW]))?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?\\b",
+		"example": "P3Y6M4DT12H30M5S"
+      }
+    },
+    "remainDistances": {
+	  "type": "array",
+      "description": "Each value of the array describes the remaining distance of each bus of the line to the busStop. It will have as many positions as buses from the line passing by the busStop. The position in the array indicates the order of arrival (eg. [bus1Distance, bus2Distance, bus3Distance])",
+      "items": {
+        "type": "integer"
+      }
+    },
+	 "destinationBusLines": {
+	  "type": "array",
+      "description": "Each value of the array describes the destination of each bus of the line to the busStop. It will have as many positions as buses from the line passing by the busStop. The position in the array indicates the order of arrival (eg. [bus1Destination, bus2Destination bus3Destination])",
+      "items": {
+        "type": "string"
+      }
+    },
+    "remainingStations": {
+      "type": "integer",
+	  "example": "4",
+      "description": "The remaining number of bus stops left until the bus reaches a specific bus stop ."
+    },
+	"companyName": {
+      "type": "string",
+	  "example": "SamHoa",
+      "description": "The name of the company that owns the bus "
+    },
+    "location": {
+      "type": "array",
+	  "example": "[36.372,127.363]",
+      "items": {
+        "type": "number",
+        "description": "The GPS XY coordination of the bus ."
+      }
+    },
+	"dateModified": {
+      "type": "string",
+      "format": "date-time",
+	  "example": "2017-02-05T08:15:30-05:09",
+      "description": "The dateTime when the data has been last modified"
+    }
+  },
+  "required": ["id"]
+}
+
+
+
+
+
